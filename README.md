@@ -2,19 +2,7 @@
 
 A faithful recreation of the iconic Matrix "digital rain" effect, running natively on Apple II hardware in 6502 assembly. Renders in real-time on the Hi-Res Graphics page using custom Katakana-inspired glyphs, sine-wave column offsets, and a shadow-buffered dirty-rect engine for smooth animation.
 
-```
-    ╔══════════════════════════════════════╗
-    ║  ░▒█   ░   █▒░   ▒   ░▒█   ░   █▒  ║
-    ║  ░ ▒   █   ░▒█   ░   ▒ █   ░   ▒█  ║
-    ║    ░   ▒   ░ █   ▒   ░ ▒       ░█  ║
-    ║        ░     ▒   ░     ░        ▒   ║
-    ║              ░                  ░   ║
-    ║ --- MATRIX SETTINGS ------------- ║
-    ║  SPEED:3/5  DIM:$55  SHIMMER:$07  ║
-    ║  +/- Speed  D Dim  B Shimmer  R.. ║
-    ║  ESC Close            Q Quit      ║
-    ╚══════════════════════════════════════╝
-```
+![matrix-rain-settings](https://github.com/user-attachments/assets/242f679f-4b20-4934-9f36-cf0815e3afb0)
 
 ## Features
 
