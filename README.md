@@ -41,11 +41,8 @@ A faithful recreation of the iconic Matrix "digital rain" effect, running native
 ## Building
 
 ```bash
-# Assemble
-ca65 matrix_screensaver.s -o matrix.o
-
-# Link (using the included config)
-ld65 -C matrix.cfg matrix.o -o MATRIX.BIN
+# Assemble and Link (using the official cc65 Apple II assembly config)
+cl65 -t apple2 -C apple2-asm.cfg matrix_screensaver.s -o MATRIX.BIN
 ```
 
 This produces `MATRIX.BIN`, a raw binary loadable at `$0800`.
@@ -149,7 +146,6 @@ The settings menu uses Apple II mixed mode (`$C053`), which composites HGR on th
 ├── README.md
 ├── LICENSE
 ├── matrix_screensaver.s    # Complete source (single-file, self-contained)
-├── matrix.cfg              # ld65 linker config (raw binary at $0800)
 └── .gitignore
 ```
 
