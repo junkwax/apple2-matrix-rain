@@ -22,39 +22,43 @@ A faithful recreation of the iconic Matrix "digital rain" effect, running native
 ## Requirements
 
 - **Hardware:** Apple II, II+, IIe, or IIgs (48K+ RAM)
-- **Assembler:** [ca65](https://cc65.github.io/doc/ca65.html) (part of the cc65 suite)
-- **Linker:** [ld65](https://cc65.github.io/doc/ld65.html) (part of the cc65 suite)
+- **Toolchain:** [cc65 suite](https://cc65.github.io/) (using the `cl65` compile and link utility)
 - **Emulator (optional):** [AppleWin](https://github.com/AppleWin/AppleWin), [MicroM8](https://paleotronic.com/software/microm8/), or [Virtual II](https://virtualii.com/)
 
 ## Building
 
+Use `apple2-asm.cfg` provided by cc65. Because the default config reserves 3 bytes for a DOS header, we explicitly force the start address to `$0800`.
+
 ```bash
-# Assemble and Link (using the official cc65 Apple II assembly config)
-cl65 -t apple2 -C apple2-asm.cfg matrix_screensaver.s -o MATRIX.BIN
+# Assemble and Link in one step
+cl65 -t apple2 -C apple2-asm.cfg --start-addr 0x0800 matrix_screensaver.s -o MATRIX.BIN
 ```
 
 This produces `MATRIX.BIN`, a raw binary loadable at `$0800`.
 
 ## Running
 
-### On an emulator
+### Creating a Disk Image (Windows/CiderPress)
+Apple II file systems require specific metadata (File Type and Load Address) to execute binaries correctly.
+1. Rename your compiled `MATRIX.BIN` to `MATRIX#060800` (this tells CiderPress it is a Binary file meant for address `$0800`).
+2. Drag and drop `MATRIX#060800` into a `.dsk` or `.po` image using [CiderPress](https://a2ciderpress.com/).
+3. Boot the disk image in your emulator.
+4. At the `]` prompt, type:
+   `BRUN MATRIX`
 
-Load `MATRIX.BIN` at address `$0800` and execute:
+### Manual Execution from Memory
+If you prefer to load it manually without executing immediately:
 
-```
-BLOAD MATRIX.BIN,A$0800
-CALL 2048
+```bash
+] BLOAD MATRIX
+] CALL 2048
 ```
 
-Or from the monitor:
-
-```
-*0800.XXXXR
-```
+*(Or from the System Monitor: `*0800G`)*
 
 ### On real hardware
 
-Transfer `MATRIX.BIN` to a ProDOS or DOS 3.3 disk image using [ADTPro](https://adtpro.com/), [CiderPress](https://a2ciderpress.com/), or similar tool. Then `BLOAD` and `CALL 2048` from BASIC.
+Transfer `MATRIX.BIN` to a ProDOS or DOS 3.3 disk image using [ADTPro](https://adtpro.com/), [CiderPress](https://a2ciderpress.com/), or similar tool. Then type `BRUN MATRIX` from the BASIC prompt.
 
 ## Controls
 
