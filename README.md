@@ -4,15 +4,15 @@ A faithful recreation of the iconic Matrix "digital rain" effect, running native
 
 ```
     ╔══════════════════════════════════════╗
-    ║  ░▒█   ░   █▒░   ▒   ░▒█   ░   █▒  ║
-    ║  ░ ▒   █   ░▒█   ░   ▒ █   ░   ▒█  ║
-    ║    ░   ▒   ░ █   ▒   ░ ▒       ░█  ║
-    ║        ░     ▒   ░     ░        ▒   ║
-    ║              ░                  ░   ║
-    ║ --- MATRIX SETTINGS ------------- ║
-    ║  SPEED:3/5  DIM:$55  SHIMMER:$07  ║
-    ║  +/- Speed  D Dim  B Shimmer  R.. ║
-    ║  ESC Close            Q Quit      ║
+    ║  ░▒█   ░   █▒░   ▒   ░▒█   ░   █▒    ║
+    ║  ░ ▒   █   ░▒█   ░   ▒ █   ░   ▒█    ║
+    ║    ░   ▒   ░ █   ▒   ░ ▒       ░█    ║
+    ║        ░     ▒   ░     ░        ▒    ║
+    ║              ░                  ░    ║
+    ║ --- MATRIX SETTINGS -------------    ║
+    ║  SPEED:3/5  DIM:$55  SHIMMER:$07     ║
+    ║  +/- Speed  D Dim  B Shimmer  R Rand ║
+    ║  ESC Close            Q Quit         ║
     ╚══════════════════════════════════════╝
 ```
 
